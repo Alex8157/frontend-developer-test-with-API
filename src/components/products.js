@@ -38,6 +38,12 @@ export default function Products(props) {
     };
   }, []);
 
+  const changeSelect = () => {
+    alert(
+      "К сожалению, у https://fakeapi.platzi.com/doc/products нет нужных для сортировки API."
+    );
+  };
+
   const scrollHandler = () => {
     if (
       document.getElementById("products").scrollHeight -
@@ -70,7 +76,7 @@ export default function Products(props) {
   return (
     <>
       <div className="right">
-        <select className="selector">
+        <select onChange={changeSelect} className="selector">
           <option value="default">По умолчанию</option>
           <option value="min">По цене min</option>
           <option value="max">По цене max</option>
