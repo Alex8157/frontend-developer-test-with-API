@@ -45,3 +45,27 @@
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .preloader {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .preloader {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .preloader {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .preloader {
+    width: 45%;
+  }
+}

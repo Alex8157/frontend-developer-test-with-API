@@ -105,11 +105,15 @@ export default function Products(props) {
                 <div className="productDivImage">
                   <img src={product.images[0]} className="productImage"></img>
                 </div>
-                <h3 className="productName">{product.title}</h3>
-                <div className="productDescription">{product.description}</div>
-                <h2 className="productPrice">
-                  {makePrice(product.price)} руб.
-                </h2>
+                <div className="productText">
+                  <h3 className="productName">{product.title}</h3>
+                  <div className="productDescription">
+                    {product.description}
+                  </div>
+                  <h2 className="productPrice">
+                    {makePrice(product.price)} руб.
+                  </h2>
+                </div>
               </div>
             </Fade>
           );

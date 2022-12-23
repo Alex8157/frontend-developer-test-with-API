@@ -92,3 +92,20 @@ textarea:active,
     width: 55%;
   }
 }
+
+@media screen and (max-height: 640px) {
+  .addBlock {
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .fieldBlock {
+    margin-top: 10px;
+  }
+
+  .addBlock input,
+  textarea {
+    padding: 10px;
+    margin-top: 5px;
+  }
+}
