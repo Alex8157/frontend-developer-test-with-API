@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #3f3f3f;
+}
+
+.label {
+  color: #3f3f3f;
+  margin: 30px 0 0 30px;
+}

@@ -1,0 +1,47 @@
+.preloader {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  background-color: #f2f2f0a0;
+  z-index: 1;
+}
+
+.preloaderBlock {
+  margin-left: 45%;
+  margin-top: 40vh;
+}
+
+.preloaderRow {
+  height: 10%;
+  width: 10%;
+  animation: preloader-rotate 1.5s infinite linear;
+}
+
+.preloaderItem {
+  background-color: #ff8484;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloaderItem:last-child {
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}

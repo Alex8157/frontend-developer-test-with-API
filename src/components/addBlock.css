@@ -1,0 +1,94 @@
+.outdoorAddBlock {
+  width: 30%;
+}
+
+.addBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 10px;
+  background: #fffefb;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08), 0px 6px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 0 30px 30px 30px;
+  margin: 30px 0 0 30px;
+}
+
+.fieldBlock {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 0;
+}
+
+.requiredField {
+  width: 4px;
+  height: 4px;
+  background-color: #ff8484;
+  border-radius: 2px;
+}
+
+.addBlock input,
+textarea {
+  background-color: #fffefb;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+  resize: none;
+  padding: 10px;
+  margin: 10px 0 5px 0;
+  font-family: "Source Sans Pro", "Roboto", "Arial";
+  color: #3f3f3f;
+}
+
+.addBlock textarea {
+  height: 10vh;
+}
+
+.addBlock input:active,
+:hover,
+:focus,
+textarea:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.addBlock button {
+  border: none;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  color: #b4b4b4;
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.warning {
+  font-size: 12px;
+  color: #ff8484;
+}
+
+@media screen and (max-width: 1200px) {
+  .outdoorAddBlock {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .outdoorAddBlock {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .outdoorAddBlock {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .outdoorAddBlock {
+    width: 55%;
+  }
+}
