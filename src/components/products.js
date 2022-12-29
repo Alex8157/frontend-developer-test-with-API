@@ -40,7 +40,7 @@ export default function Products(props) {
 
   const changeSelect = () => {
     alert(
-      "К сожалению, у https://fakeapi.platzi.com/doc/products нет нужных для сортировки API."
+      "К сожалению, у https://fakeapi.platzi.com/doc/products нет API для сортировки ."
     );
   };
 
