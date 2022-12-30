@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 70%;
+  width: 75%;
   height: 88vh;
   margin: 20px 0 0 10px;
   overflow-y: scroll;
@@ -114,15 +114,15 @@
   -webkit-box-orient: vertical;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1366px) {
   .products {
-    width: 65%;
+    width: 70%;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   .products {
-    width: 60%;
+    width: 65%;
   }
   .fade {
     width: 45%;
@@ -132,17 +132,16 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .products {
-    width: 55%;
+    width: 60%;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .products {
-    width: 45%;
+    width: 50%;
   }
-
   .fade {
     width: 100%;
     margin-left: 0;
@@ -150,18 +149,17 @@
     margin-bottom: 0;
   }
 }
-
 @media screen and (max-height: 720px) {
   .productName,
   .productPrice {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-}
-
-@media screen and (max-height: 640px) {
   .products {
-    margin-top: 10px;
+    margin-top: 0;
+  }
+  .product {
+    height: 78vh;
   }
   .selector {
     margin-top: -30px;

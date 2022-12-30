@@ -164,7 +164,7 @@ export default function AddBlock(props) {
             color: additionAllowed ? "#FFFFFF" : "#b4b4b4",
           }}
         >
-          Добавить товар
+          <h3 className="buttonH3">Добавить товар</h3>
         </button>
       </div>
     </div>
