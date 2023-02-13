@@ -27,8 +27,7 @@
   border-radius: 2px;
 }
 
-.addBlock input,
-textarea {
+.addBlock textarea {
   background-color: #fffefb;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -44,9 +43,6 @@ textarea {
   height: 10vh;
 }
 
-.addBlock input:active,
-:hover,
-:focus,
 textarea:active,
 :hover,
 :focus {
@@ -54,45 +50,13 @@ textarea:active,
   outline-offset: 0;
 }
 
-.addBlock button {
-  border: none;
-  border-radius: 10px;
-  background-color: #eeeeee;
-  color: #b4b4b4;
-  padding: 10px 0 10px 0;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
-.buttonH3 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.warning {
-  font-size: 12px;
-  color: #ff8484;
-}
-
 @media screen and (max-width: 1366px) {
-  .outdoorAddBlock {
-    width: 30%;
-  }
-}
-
-@media screen and (max-width: 1280px) {
   .outdoorAddBlock {
     width: 35%;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .outdoorAddBlock {
-    width: 40%;
-  }
-}
-
-@media screen and (max-width: 900px) {
   .outdoorAddBlock {
     width: 50%;
   }

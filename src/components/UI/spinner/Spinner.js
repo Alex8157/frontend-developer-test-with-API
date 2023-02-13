@@ -1,5 +1,5 @@
 import "./spinner.css";
-export default function Spinner() {
+export function Spinner() {
   return (
     <div className="preloader">
       <div className="preloaderBlock">

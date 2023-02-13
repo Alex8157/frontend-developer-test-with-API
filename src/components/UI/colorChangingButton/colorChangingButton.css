@@ -1,0 +1,14 @@
+.addButton {
+  border: none;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  color: #b4b4b4;
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.buttonH3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

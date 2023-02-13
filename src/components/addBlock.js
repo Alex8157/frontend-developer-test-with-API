@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./addBlock.css";
+import { PostService } from "../API/PostService";
+import { InputWarning } from "./UI/inputWithWarning/InputWarning";
+import { ColorChangingButton } from "./UI/colorChangingButton/ColorChangingButton";
+import "../styles/addBlock.css";
 
 export default function AddBlock(props) {
   const [name, changeName] = useState("");
@@ -7,9 +10,9 @@ export default function AddBlock(props) {
   const [link, changeLink] = useState("");
   const [price, changePrice] = useState(0);
   const [additionAllowed, changeAdditionAllowed] = useState(0);
-  const [nameText, changeNameText] = useState("");
-  const [linkText, changeLinkText] = useState("");
-  const [priceText, changePriceText] = useState("");
+  const [nameWarning, changeNameWarning] = useState(0);
+  const [linkWarning, changeLinkWarning] = useState(0);
+  const [priceWarning, changePriceWarning] = useState(0);
 
   const handleСhangeName = (event) => {
     changeName(event.target.value);
@@ -23,39 +26,6 @@ export default function AddBlock(props) {
     changeLink(event.target.value);
   };
 
-  useEffect(() => {
-    if (name) {
-      changeNameText("");
-    }
-    if (name && link && price) {
-      changeAdditionAllowed(1);
-    } else {
-      changeAdditionAllowed(0);
-    }
-  }, [name]);
-
-  useEffect(() => {
-    if (link) {
-      changeLinkText("");
-    }
-    if (name && link && price) {
-      changeAdditionAllowed(1);
-    } else {
-      changeAdditionAllowed(0);
-    }
-  }, [link]);
-
-  useEffect(() => {
-    if (price) {
-      changePriceText("");
-    }
-    if (name && link && price) {
-      changeAdditionAllowed(1);
-    } else {
-      changeAdditionAllowed(0);
-    }
-  }, [price]);
-
   const handleСhangePrice = (event) => {
     changePrice(
       event.target.value
@@ -65,24 +35,25 @@ export default function AddBlock(props) {
     );
   };
 
+  useEffect(() => {
+    if (name && link && price) {
+      changeAdditionAllowed(1);
+    } else {
+      changeAdditionAllowed(0);
+    }
+  }, [name, link, price]);
+
   const addProduct = async (product) => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product),
-    };
-    return fetch("https://api.escuelajs.co/api/v1/products/", requestOptions)
-      .then((response) => response.json())
-      .then((data) => data);
+    PostService.addProduct(product);
   };
 
   const add = async () => {
     if (additionAllowed) {
       await addProduct({
         title: name,
-        description: description,
+        description: !description ? " " : description,
         images: [link],
-        categoryId: 1,
+        categoryId: Math.round(Math.random() * 4 + 1),
         price: +price.replace(/\s/g, ""),
       });
       props.makeAddTrue();
@@ -91,15 +62,18 @@ export default function AddBlock(props) {
       changeLink("");
       changePrice(0);
       changeAdditionAllowed(0);
+      changeNameWarning(0);
+      changeLinkWarning(0);
+      changePriceWarning(0);
     } else {
       if (!name) {
-        changeNameText("Поле является обязательным");
+        changeNameWarning(1);
       }
       if (!link) {
-        changeLinkText("Поле является обязательным");
+        changeLinkWarning(1);
       }
       if (!price) {
-        changePriceText("Поле является обязательным");
+        changePriceWarning(1);
       }
     }
   };
@@ -111,16 +85,13 @@ export default function AddBlock(props) {
           <div>Наименование товара</div>
           <div className="requiredField"></div>
         </div>
-        <input
-          placeholder="Введите наименование товара"
-          onChange={handleСhangeName}
+        <InputWarning
+          name={"name"}
+          placeholder={"Введите наименование товара"}
+          changeHandler={handleСhangeName}
           value={name}
-          style={{
-            outline: nameText ? "1px solid #FF8484" : "",
-            marginBottom: nameText ? "" : "18.3px",
-          }}
-        ></input>
-        <div className="warning">{nameText}</div>
+          warningSignal={nameWarning}
+        ></InputWarning>
         <div className="fieldBlock">
           <div>Описание товара</div>
         </div>
@@ -133,39 +104,29 @@ export default function AddBlock(props) {
           <div>Ссылка на изображение товара</div>
           <div className="requiredField"></div>
         </div>
-        <input
-          placeholder="Введите ссылку"
-          onChange={handleChangeLink}
+        <InputWarning
+          name={"link"}
+          placeholder={"Введите ссылку на изображение"}
+          changeHandler={handleChangeLink}
           value={link}
-          style={{
-            outline: linkText ? "1px solid #FF8484" : "",
-            marginBottom: linkText ? "" : "18.3px",
-          }}
-        ></input>
-        <div className="warning">{linkText}</div>
+          warningSignal={linkWarning}
+        ></InputWarning>
         <div className="fieldBlock">
           <div>Цена товара</div>
           <div className="requiredField"></div>
         </div>
-        <input
-          placeholder="Введите цену"
-          onChange={handleСhangePrice}
-          value={price ? price : ""}
-          style={{
-            outline: priceText ? "1px solid #FF8484" : "",
-            marginBottom: priceText ? "" : "18.3px",
-          }}
-        ></input>
-        <div className="warning">{priceText}</div>
-        <button
-          onClick={add}
-          style={{
-            backgroundColor: additionAllowed ? "#7BAE73" : "#eeeeee",
-            color: additionAllowed ? "#FFFFFF" : "#b4b4b4",
-          }}
-        >
-          <h3 className="buttonH3">Добавить товар</h3>
-        </button>
+        <InputWarning
+          name={"price"}
+          placeholder={"Введите цену товара"}
+          changeHandler={handleСhangePrice}
+          value={price}
+          warningSignal={priceWarning}
+        ></InputWarning>
+        <ColorChangingButton
+          onClickFunction={add}
+          change={additionAllowed}
+          value={"Добавить товар"}
+        ></ColorChangingButton>
       </div>
     </div>
   );

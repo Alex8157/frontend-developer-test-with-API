@@ -1,6 +1,6 @@
 .preloader {
   position: absolute;
-  width: 70%;
+  width: 75%;
   height: 100%;
   background-color: #f2f2f0a0;
   z-index: 1;
@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1366px) {
   .preloader {
     width: 65%;
   }
@@ -54,18 +54,6 @@
 
 @media screen and (max-width: 1024px) {
   .preloader {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .preloader {
-    width: 55%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .preloader {
-    width: 45%;
+    width: 50%;
   }
 }

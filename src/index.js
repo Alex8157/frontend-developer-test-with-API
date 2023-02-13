@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Page from "./components/page";
+import ProductsPage from "./components/ProductsPage";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Page />);
+root.render(<ProductsPage />);

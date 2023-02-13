@@ -1,0 +1,66 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 75%;
+  height: 88vh;
+  margin: 20px 0 0 10px;
+  overflow-y: scroll;
+}
+
+.right {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fade {
+  width: 30%;
+  margin: 10px 1.6% 1.6% 1.6%;
+  background-color: #fffefb;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fade:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 6px 10px rgba(0, 0, 0, 0.08);
+}
+
+.fade:hover .deleteButton {
+  display: flex;
+}
+
+@media screen and (max-width: 1366px) {
+  .products {
+    width: 65%;
+  }
+  .fade {
+    width: 45%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .products {
+    width: 50%;
+  }
+  .fade {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-height: 720px) {
+  .products {
+    margin-top: 0;
+  }
+  .selector {
+    margin-top: -30px;
+  }
+}

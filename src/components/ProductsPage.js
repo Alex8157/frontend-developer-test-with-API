@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import AddBlock from "./addBlock";
-import Products from "./products";
-import "./page.css";
+import AddBlock from "./AddBlock";
+import Products from "./Products";
+import "../styles/page.css";
 
-export default function Page() {
+export default function ProductsPage() {
   const [add, changeAdd] = useState(false);
   return (
     <>
